@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const btn3 = document.getElementById("Lan_btn");
 
     warnBtn.addEventListener('click', ()=>{
-        warnDiv.remove()
+        warnDiv.remove();
     })
     
     root.addEventListener('animationstart', (event)=>{
