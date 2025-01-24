@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const div1 = document.getElementById("aboutme");
     const links = document.getElementById("links");
     const langs = document.getElementById("langs");
-    const warnBtn = document.getElementById("hidewarning");
 
     // Buttons
     const btnBack = document.querySelectorAll('.goback');
@@ -15,8 +14,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const btn2 = document.getElementById("L_btn");
     const btn3 = document.getElementById("Lan_btn");
 
-    warnBtn.addEventListener('click', ()=>{
-        warnBtn.parentElement.style.display = "none";
+    document.getElementById("hidewarning").addEventListener('click', ()=>{
+        document.getElementById("hidewarning").parentElement.style.display = "none";
     })
     
     root.addEventListener('animationstart', (event)=>{
