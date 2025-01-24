@@ -7,12 +7,18 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const div1 = document.getElementById("aboutme");
     const links = document.getElementById("links");
     const langs = document.getElementById("langs");
+    const warn = document.getElementById("warning"); // TEMP
+    const hideWarn = document.getElementById("hidewarning") // TEMP
 
     // Buttons
     const btnBack = document.querySelectorAll('.goback');
     const btn1 = document.getElementById("AM_btn");
     const btn2 = document.getElementById("L_btn");
     const btn3 = document.getElementById("Lan_btn");
+
+    hideWarn.addEventListener('click',()=>{
+        warn.remove();
+    })
     
     root.addEventListener('animationstart', (event)=>{
         // console.log(`Animation started: ${event.animationName}`);
