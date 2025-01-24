@@ -43,6 +43,9 @@ h2 {
 p {
     font-size: 1.2em;
 }
+/* p,h1,h2,ul,li {
+    cursor: default;
+} */
 
 #root {
     border: solid white 3px;
@@ -98,13 +101,29 @@ button {
     margin: 1%;
     cursor: pointer;
     display: inline-block;
-
     box-shadow: 0px 7.5px 10px #0c4769;
+
+    filter: brightness(100%);
+    transform: scale(1) rotate(0deg);
+    transition: filter 0.5s ease, transform 0.3s ease;
 }
 button:disabled{
     color: black;
 }
+button:hover{
+    filter: brightness(77%);
+    transform: scale(1.05);
+}
 
+.link {
+    filter: brightness(100%);
+    transform: scale(1) rotate(0deg);
+    transition: filter 0.5s ease, transform 0.3s ease;
+}
+.link:hover {
+    filter: brightness(77%);
+    transform: scale(1.05) rotate(2.5deg);
+}
 button a {
     color: white;
     text-decoration: none;
@@ -155,8 +174,8 @@ button a {
 #links .goback {
     color: black;
 }
-#yt {
-    background-color: #EE0000;
+#yt,#yt1 {
+    background-color: #CA0000;
 }
 #tw {
     background-color: #15202b;
