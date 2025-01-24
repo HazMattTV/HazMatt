@@ -5,30 +5,40 @@ document.addEventListener("DOMContentLoaded", ()=>{
     // Divs
     const divMain = document.getElementById("main");
     const div1 = document.getElementById("aboutme");
-    const links = document.getElementById("links")
-    const langs = document.getElementById("langs")
+    const links = document.getElementById("links");
+    const langs = document.getElementById("langs");
+    const warnBtn = document.getElementById("hidewarning");
 
     // Buttons
     const btnBack = document.querySelectorAll('.goback');
     const btn1 = document.getElementById("AM_btn");
     const btn2 = document.getElementById("L_btn");
     const btn3 = document.getElementById("Lan_btn");
-    
-    root.addEventListener('animationstart', ()=>{
-        btn1.disabled = true;
-        btn2.disabled = true;
-        btn3.disabled = true;
-        btnBack.forEach(btn => {
-            btn.disabled = true;
-        });
+
+    warnBtn.addEventListener('click', ()=>{
+        warnBtn.parentElement.style.display = "none";
     })
-    root.addEventListener('animationend', ()=>{
-        btn1.disabled = false;
-        btn2.disabled = false;
-        btn3.disabled = false;
-        btnBack.forEach(btn => {
-            btn.disabled = false;
-        });
+    
+    root.addEventListener('animationstart', (event)=>{
+        // console.log(`Animation started: ${event.animationName}`);
+        if (event.animationName == "fadeOut"){
+            btn1.disabled = true;
+            btn2.disabled = true;
+            btn3.disabled = true;
+            btnBack.forEach(btn => {
+                btn.disabled = true;
+            });
+        }
+    })
+    root.addEventListener('animationend', (event)=>{
+        if (event.animationName == "fadeIn"){
+            btn1.disabled = false;
+            btn2.disabled = false;
+            btn3.disabled = false;
+            btnBack.forEach(btn => {
+                btn.disabled = false;
+            });
+        }
     })
 
     btn1.addEventListener('click', ()=>{
@@ -41,7 +51,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         changeDiv(root,divMain,langs)
     })
 
-    btnBack.forEach(btn => {
+    btnBack.forEach(btn=>{
         btn.addEventListener('click', () => {
             changeDiv(root, btn.parentElement, divMain);
         });
