@@ -43,6 +43,9 @@ h2 {
 p {
     font-size: 1.2em;
 }
+.kaomoji {
+    white-space: nowrap;
+}
 /* p,h1,h2,ul,li {
     cursor: default;
 } */
@@ -88,34 +91,6 @@ nav {
     width: 22.5%;
     border-radius: 50%;
     border: solid white 3px;
-}
-
-@media (max-width: 500px) {
-    #warning {
-        display: block !important;
-    }
-}
-
-@media (min-width: 501px){
-    #warning {
-        display: none !important;
-    }
-}
-
-#warning {
-    background-color: black;
-    color: white;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    top: 0px;
-    text-align: center;
-
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
 }
 
 button {
@@ -208,6 +183,17 @@ button a {
 #tw {
     background-color: #15202b;
 }
+#tt {
+    background-color: #111111;
+}
+#tt i {
+    color: #010101;
+    text-shadow:
+      2px 2px 0 #EE1D52,
+      -2px -2px 0 #69C9D0,
+      2px -2px 0 #EE1D52,
+      -2px 2px 0 #69C9D0;
+}
 #gh {
     background-color: #151b23;
 }
@@ -239,8 +225,8 @@ button a {
     border: solid white 3px;
     
     width: 80px;
-    border-radius: 50%;
     height: 80px;
+    border-radius: 50%;
 }
 #langs section article p {
     font-size: 1.4rem;
@@ -263,5 +249,94 @@ button a {
     }
     100% {
         opacity: 0;
+    }
+}
+
+/* MOBILE VER */
+@media (max-width: 500px) {
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.2em;
+    }
+    p {
+        font-size: 1em;
+    }
+
+    #root {
+        width: 80%;
+    }
+
+    section p q {
+        font-size: 1.3rem;
+    }
+
+    #pfp {
+        width: 40%;
+    }
+
+    button {
+        padding: 0% 7%;
+        height: 50px;
+        font-size: 1.35rem;
+    }
+    .goback {
+        padding: 0% 6%;
+        margin-bottom: 5%;
+    }
+
+    /* --- ABOUT ME --- */
+    #aboutme article {
+        left: 25%;
+    }
+
+    /* --- LANGUAGE SECTION --- */
+    #langs section article img {
+        width: 60px;
+        height: 60px;
+    }
+    #langs section article p {
+        font-size: 1.2rem;
+    }
+}
+
+/* TABLET VER */
+@media (min-width: 501px) and (max-width: 800px) {
+    h1 {
+        font-size: 2.1em;
+    }
+    h2 {
+        font-size: 1.4em;
+    }
+    p {
+        font-size: 1.2em;
+    }
+
+    #root {
+        width: 70%;
+    }
+
+    #pfp {
+        width: 30%;
+    }
+
+    .goback {
+        padding: 0% 4%;
+        margin-bottom: 2.5%;
+    }
+
+    /* --- ABOUT ME --- */
+    #aboutme article {
+        left: 25%;
+    }
+
+    /* --- LANGUAGE SECTION --- */
+    #langs section article img {
+        width: 70px;
+        height: 70px;
+    }
+    #langs section article p {
+        font-size: 1.4rem;
     }
 }
